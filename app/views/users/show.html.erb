@@ -1,0 +1,9 @@
+<%= render 'shared/header' %>
+
+<% if @current_user.events.any? %>
+  <h3>Events (<%= @current_user.events.count %>)</h3>
+  <ol class="microposts">
+    <%= render @events %>
+  </ol>
+  <%= will_paginate @events %>
+<% end %>
